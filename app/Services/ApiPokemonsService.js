@@ -11,6 +11,7 @@ class ApiPokemonsService {
     async getDetails(name) {
         let res = await pokeApi.get(name)
         ProxyState.activePokemon = new Pokemon(res.data)
+        console.log(res.data)
     }
 
 

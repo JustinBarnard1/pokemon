@@ -3,8 +3,8 @@ import Pokemon from "../Models/Pokemon.js";
 import { sandboxApi } from "./AxiosService.js";
 
 class MyPokemonsService {
-    setActive(name) {
-        ProxyState.activePokemon = ProxyState.myPokemons.find(p => p.name == name)
+    setActive(_id) {
+        ProxyState.activePokemon = ProxyState.myPokemons.find(p => p._id == _id)
     }
     async getMyPokemon() {
         let res = await sandboxApi.get('')
@@ -21,5 +21,5 @@ class MyPokemonsService {
     }
 }
 
-const MyPokemonsService = new MyPokemonsService()
+const myPokemonsService = new MyPokemonsService()
 export default myPokemonsService
