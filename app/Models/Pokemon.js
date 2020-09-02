@@ -1,17 +1,18 @@
 export default class Pokemon {
-    constructor({ _id, id, name, weight, height, img }) {
+    constructor({ _id, id, name, weight, height, img, sprites }) {
         this.id = id
         this._id = _id
         this.name = name
         this.weight = weight
         this.height = height
-        this.img = img || "//placehold.it/100x100"
+        this.img = img || sprites.front_shiny
     }
 
     get Template() {
         return `
     <div class="card-body">
       <h4 class="card-title">${this.name}</h4>
+      <img src="${this.img}">
       <p class="card-text">Height: ${this.height}</p>
       <p class="card-text">Weight: ${this.weight}</p>
       ${this.Button}
